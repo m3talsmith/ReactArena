@@ -13,7 +13,9 @@ import {
     CharacterCreate,
     CharacterView
 } from '../Character'
-// import Battles from '../Battles'
+import {
+    BattleList
+} from '../Battle'
 // import Battle from '../Battle'
 
 export default function Routes(props) {
@@ -28,6 +30,7 @@ export default function Routes(props) {
                         <Route path='/characters' exact component={CharacterList} />
                         <Route path='/characters/create' component={CharacterCreate} />
                         <Route path='/characters/:id' component={CharacterView} />
+                        <Route path='/battles' exact component={BattleList} />
                     </Switch>
                 </div>
             </div>

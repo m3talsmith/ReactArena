@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const notImplemented = <div>Not Implemented</div>
-export function CharacterList() { return notImplemented }
+
+export function CharacterList(props) {
+    let { characters } = props
+    let ids = Object.keys(characters)
+
+    let renderedCharacters = ids.map(id => {
+        let character = characters[id]
+        return (
+            <div key={id} className='character'>{character["name"]}</div>
+        )
+    })
+    return <div>{renderedCharacters}</div>
+}
+
 export function CharacterView() { return notImplemented }
 export function CharacterEdit() { return notImplemented }
-
-export class CharacterCreate extends Component {
-    render() {
-        console.log('char create')
-        return (
-            <div>
-                <form>
-                    <input type='text' ref='name' />
-                </form>
-            </div >
-        )
-    }
-}
